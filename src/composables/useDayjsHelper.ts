@@ -9,7 +9,7 @@ export const DEFAULT_DATE_FORMAT = "YYYY-MM-DD HH:mm"
 
 export default function useDayjsHelper(config: GGanttChartConfig = provideConfig()) {
   const { chartStart, chartEnd, barStart, barEnd, dateFormat } = config
-
+  console.log("useDayjsHelper", config)
   const chartStartDayjs = computed(() => toDayjs(chartStart.value))
   const chartEndDayjs = computed(() => toDayjs(chartEnd.value))
 

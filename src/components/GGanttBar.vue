@@ -18,7 +18,7 @@
     @mouseleave="onMouseEvent"
     @contextmenu="onMouseEvent"
   >
-    <div class="g-gantt-bar-label">
+    <div class="g-gantt-bar-label" style="">
       <slot :bar="bar">
         <div>
           {{ barConfig.label || "" }}
@@ -29,6 +29,19 @@
       <div class="g-gantt-bar-handle-left" />
       <div class="g-gantt-bar-handle-right" />
     </template>
+  </div>
+  <div
+    class="g-gantt-bar-label"
+    :style="{
+      ...barConfig.style,
+      position: 'absolute',
+      top: `${rowHeight * 0.1}px`,
+      left: `${xEnd}px`,
+      height: `${rowHeight * 0.8}px`,
+      zIndex: isDragging ? 3 : 2
+    }"
+  >
+    {{ barConfig.label || "" }}
   </div>
 </template>
 
@@ -121,7 +134,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: cadetblue;
+  background: #54c2ef4d;
   overflow: hidden;
 }
 
@@ -131,8 +144,16 @@ onMounted(() => {
   box-sizing: border-box;
   padding: 0 14px 0 14px; /* 14px is the width of the handle */
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  font-family: Energy;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+  color: #000000de !important;
 }
 .g-gantt-bar-label > * {
   white-space: nowrap;
@@ -142,10 +163,10 @@ onMounted(() => {
 .g-gantt-bar-handle-left,
 .g-gantt-bar-handle-right {
   position: absolute;
-  width: 10px;
+  width: 6px;
   height: 100%;
-  background: white;
-  opacity: 0.7;
+  background: #54c2ef;
+  /* opacity: 0.7; */
   border-radius: 0px;
   cursor: ew-resize;
   top: 0;

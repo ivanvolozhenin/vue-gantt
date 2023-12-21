@@ -124,6 +124,15 @@ export const colorSchemes: Record<string, ColorScheme> = {
     hoverHighlight: "rgba(160, 219, 171, 0.5)",
     text: "white",
     background: "white"
+  },
+  reckitt: {
+    primary: "#FAFAFA",
+    secondary: "FAFAFF",
+    ternary: "#FAFAFA",
+    quartenary: "FAFAFF",
+    hoverHighlight: "rgba(160, 219, 171, 0.5)",
+    text: "000000de",
+    background: "white"
   }
 }
 

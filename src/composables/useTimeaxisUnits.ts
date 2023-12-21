@@ -16,6 +16,8 @@ export default function useTimeaxisUnits() {
         return "month"
       case "month":
         return "year"
+      case "week":
+        return "month"
       default:
         throw new Error(
           "Precision prop incorrect. Must be one of the following: 'hour', 'day', 'month'"
@@ -91,6 +93,11 @@ export default function useTimeaxisUnits() {
             totalMinutes) *
           100
       }
+
+      console.log(currentUnit, 'currentUnit')
+      console.log(chartStartDayjs, 'chartStartDayjs')
+
+
       lowerUnits.push({
         label: currentUnit.format(displayFormats[lowerUnit]),
         value: String(currentUnit[lowerUnit === "day" ? "date" : lowerUnit]()),

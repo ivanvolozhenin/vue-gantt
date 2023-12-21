@@ -8,11 +8,11 @@
     @mouseover="isHovering = true"
     @mouseleave="isHovering = false"
   >
-    <div class="g-gantt-row-label" :style="{ background: colors.primary, color: colors.text }">
+    <!-- <div class="g-gantt-row-label" :style="{ background: colors.primary, color: colors.text }">
       <slot name="label">
-        {{ label }}
+        {{ label }} fdsfsd
       </slot>
-    </div>
+    </div> -->
     <div ref="barContainer" class="g-gantt-row-bars-container" v-bind="$attrs">
       <transition-group name="bar-transition" tag="div">
         <g-gantt-bar v-for="bar in bars" :key="bar.ganttBarConfig.id" :bar="bar">

@@ -28,8 +28,9 @@ import provideConfig from "../provider/provideConfig.js"
 
 const TOOLTIP_FORMATS = {
   hour: "HH:mm",
-  day: "DD. MMM HH:mm",
-  month: "DD. MMMM YYYY"
+  day: "DD MMM HH:mm",
+  week: "DD MMM",
+  month: "DD MMMM YYYY"
 } as const
 
 const DEFAULT_DOT_COLOR = "cadetblue"

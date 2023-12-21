@@ -60,9 +60,17 @@ const { timeaxisUnits } = useTimeaxisUnits()
   min-height: 75px;
   background: white;
   z-index: 4;
-  box-shadow: 0px 1px 3px 2px rgba(50, 50, 50, 0.5);
+  /* box-shadow: 0px 1px 3px 2px rgba(50, 50, 50, 0.5); */
   display: flex;
   flex-direction: column;
+  font-family: Energy;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  color: #000000de !important;
 }
 
 .g-timeunits-container {
@@ -77,6 +85,14 @@ const { timeaxisUnits } = useTimeaxisUnits()
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-left: 1px solid #ebebef;
+  font-family: Energy;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #4c6172;
 }
 
 .g-upper-timeunit {
@@ -84,6 +100,14 @@ const { timeaxisUnits } = useTimeaxisUnits()
   height: 100%;
   justify-content: center;
   align-items: center;
+  border-left: 1px solid #ebebef;
+  font-family: Energy;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #4c6172;
 }
 
 .g-timeaxis-hour-pin {

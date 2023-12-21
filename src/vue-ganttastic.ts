@@ -4,6 +4,7 @@ import isSameOrBefore from "dayjs/plugin/isSameOrBefore.js"
 import isSameOrAfter from "dayjs/plugin/isSameOrAfter.js"
 import isBetween from "dayjs/plugin/isBetween.js"
 import customParseFormat from "dayjs/plugin/customParseFormat.js"
+import weekOfYear from "dayjs/plugin/weekOfYear.js"
 
 import type { GanttBarObject } from "./types.js"
 import type { ColorScheme } from "./color-schemes"
@@ -16,6 +17,7 @@ export function extendDayjs() {
   dayjs.extend(isSameOrAfter)
   dayjs.extend(isBetween)
   dayjs.extend(customParseFormat)
+  dayjs.extend(weekOfYear)
 }
 
 export type { ColorScheme, GanttBarObject }
