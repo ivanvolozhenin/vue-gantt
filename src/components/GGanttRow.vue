@@ -81,7 +81,7 @@ const onDrop = (e: MouseEvent) => {
   position: relative;
   border-top: 1px solid #eaeaea;
   width: 100%;
-  border-bottom: 1px solid #eaeaea;
+  /* border-bottom: 1px solid #eaeaea; */
 }
 
 .g-gantt-row-label {

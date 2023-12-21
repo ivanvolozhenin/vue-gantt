@@ -1,6 +1,6 @@
 <template>
   <div class="g-timeaxis">
-    <div class="g-timeunits-container">
+    <!-- <div class="g-timeunits-container">
       <div
         v-for="({ label, value, date, width }, index) in timeaxisUnits.upperUnits"
         :key="label"
@@ -15,7 +15,7 @@
           {{ label }}
         </slot>
       </div>
-    </div>
+    </div> -->
 
     <div class="g-timeunits-container">
       <div
@@ -56,8 +56,8 @@ const { timeaxisUnits } = useTimeaxisUnits()
   position: sticky;
   top: 0;
   width: 100%;
-  height: 8vh;
-  min-height: 75px;
+  height: 45px;
+  min-height: 45px;
   background: white;
   z-index: 4;
   /* box-shadow: 0px 1px 3px 2px rgba(50, 50, 50, 0.5); */
@@ -76,7 +76,7 @@ const { timeaxisUnits } = useTimeaxisUnits()
 .g-timeunits-container {
   display: flex;
   width: 100%;
-  height: 50%;
+  height: 100%;
 }
 
 .g-timeunit {

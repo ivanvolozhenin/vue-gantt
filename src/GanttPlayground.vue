@@ -94,6 +94,7 @@ const rows = ref([
           id: "8621987320",
           label: "Promotion 1",
           hasHandles: true,
+          className: "promotion-1",
           style: {
             borderRadius: "5px",
             color: "blue",

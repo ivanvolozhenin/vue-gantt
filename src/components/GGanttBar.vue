@@ -26,8 +26,8 @@
       </slot>
     </div>
     <template v-if="barConfig.hasHandles">
-      <div class="g-gantt-bar-handle-left" />
-      <div class="g-gantt-bar-handle-right" />
+      <div :class="['g-gantt-bar-handle-left', barConfig.classLeft || '']" />
+      <div :class="['g-gantt-bar-handle-right', barConfig.classRight || '']" />
     </template>
   </div>
   <div
