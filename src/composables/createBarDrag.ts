@@ -29,18 +29,16 @@ export default function createBarDrag(
 
     cursorOffsetX = e.clientX - (barElement.getBoundingClientRect().left || 0)
     const mousedownType = (e.target as Element).className
-    switch (mousedownType) {
-      case "g-gantt-bar-handle-left":
-        document.body.style.cursor = "ew-resize"
-        dragCallBack = dragByLeftHandle
-        break
-      case "g-gantt-bar-handle-right":
-        document.body.style.cursor = "ew-resize"
-        dragCallBack = dragByRightHandle
-        break
-      default:
-        dragCallBack = drag
+    if (mousedownType.includes("g-gantt-bar-handle-left")) {
+      document.body.style.cursor = "ew-resize"
+      dragCallBack = dragByLeftHandle
+    } else if (mousedownType.includes("g-gantt-bar-handle-right")) {
+      document.body.style.cursor = "ew-resize"
+      dragCallBack = dragByRightHandle
+    } else {
+      dragCallBack = drag
     }
+
     isDragging.value = true
     window.addEventListener("mousemove", dragCallBack)
     window.addEventListener("mouseup", endDrag)

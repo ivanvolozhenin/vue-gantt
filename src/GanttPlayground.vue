@@ -133,6 +133,8 @@ const rows = ref([
           id: "8621987322",
           label: "Promotion 3",
           hasHandles: true,
+          classLeft: "promotion-3-left",
+          classRight: "promotion-3-left",
           style: {
             borderRadius: "5px",
             color: "blue",
