@@ -5,7 +5,7 @@
     :style="{
       ...barConfig.style,
       position: 'absolute',
-      top: `${rowHeight * 0.1}px`,
+
       left: `${xStart}px`,
       width: `${xEnd - xStart}px`,
       height: `${rowHeight * 0.8}px`,
@@ -136,6 +136,7 @@ onMounted(() => {
   align-items: center;
   background: #54c2ef4d;
   overflow: hidden;
+  transform: translateY(10%);
 }
 
 .g-gantt-bar-label {

@@ -137,8 +137,6 @@ const rows = ref([
           classRight: "promotion-3-left",
           style: {
             borderRadius: "5px",
-            color: "blue",
-            fontSize: "10px"
           }
         }
       }
