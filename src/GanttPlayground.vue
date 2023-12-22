@@ -83,6 +83,24 @@ const updateChartZoom = () => {
   chartEnd.value = newChartEnd.format(format.value)
 }
 
+const barConfigs = {
+  activeBar: {
+    classLeft: "gantt-selected-left",
+    classRight: "gantt-selected-right",
+    class: "gantt-selected",
+  },
+  inactiveBar: {
+    classLeft: "gantt-excluded-left",
+    classRight: "gantt-excluded-right",
+    class: "gantt-excluded",
+  },
+  normalBar: {
+    classLeft: "gantt-style-left",
+    classRight: "gantt-style-right",
+    class: "gantt-style",
+  },
+};
+
 const rows = ref([
   {
     label: "Promotion 1",
@@ -201,15 +219,16 @@ const rows = ref([
   }
 ])
 
-function addSelectedById(barId) {
-  for (const promotion of rows) {
+function addConfigById(barId, config) {
+  console.log("promotion", rows);
+  for (const promotion of rows.value) {
     for (const bar of promotion.bars) {
+      console.log("bar", bar);
       if (bar.ganttBarConfig.id === barId) {
-        bar.selected = true
+        bar.ganttBarConfig = { ...bar.ganttBarConfig, ...config };
       }
     }
   }
-  return ganttData
 }
 
 const addBar = () => {
@@ -241,30 +260,32 @@ const deleteBar = () => {
 
 const onClickBar = (bar: GanttBarObject, e: MouseEvent, datetime?: string) => {
   console.log("click-bar", bar, e, datetime)
+  addConfigById(bar.ganttBarConfig.id, barConfigs.activeBar);
+
 }
 
 const onMousedownBar = (bar: GanttBarObject, e: MouseEvent, datetime?: string) => {
-  console.log("mousedown-bar", bar, e, datetime)
+  // console.log("mousedown-bar", bar, e, datetime)
 }
 
 const onMouseupBar = (bar: GanttBarObject, e: MouseEvent, datetime?: string) => {
-  console.log("mouseup-bar", bar, e, datetime)
+  // console.log("mouseup-bar", bar, e, datetime)
 }
 
 const onMouseenterBar = (bar: GanttBarObject, e: MouseEvent) => {
-  console.log("mouseenter-bar", bar, e)
+  // console.log("mouseenter-bar", bar, e)
 }
 
 const onMouseleaveBar = (bar: GanttBarObject, e: MouseEvent) => {
-  console.log("mouseleave-bar", bar, e)
+  // console.log("mouseleave-bar", bar, e)
 }
 
 const onDragstartBar = (bar: GanttBarObject, e: MouseEvent) => {
-  console.log("dragstart-bar", bar, e)
+  // console.log("dragstart-bar", bar, e)
 }
 
 const onDragBar = (bar: GanttBarObject, e: MouseEvent) => {
-  console.log("drag-bar", bar, e)
+  // console.log("drag-bar", bar, e)
 }
 
 const onDragendBar = (
@@ -272,7 +293,7 @@ const onDragendBar = (
   e: MouseEvent,
   movedBars?: Map<GanttBarObject, { oldStart: string; oldEnd: string }>
 ) => {
-  console.log("dragend-bar", bar, e, movedBars)
+  // console.log("dragend-bar", bar, e, movedBars)
   // convert oldStartTimestamp to Date
   // convert oldEndTimestamp to Date
   // bar.beginDate = oldStart

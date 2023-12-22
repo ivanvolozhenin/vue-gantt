@@ -27,7 +27,7 @@ export default function createBarDrag(
       return
     }
 
-    cursorOffsetX = e.clientX - (barElement.getBoundingClientRect().left || 0)
+    cursorOffsetX = e.clientX - (barElement?.getBoundingClientRect()?.left || 0)
     const mousedownType = (e.target as Element).className
     if (mousedownType.includes("g-gantt-bar-handle-left")) {
       document.body.style.cursor = "ew-resize"
@@ -56,7 +56,7 @@ export default function createBarDrag(
       return
     }
 
-    const barWidth = barElement.getBoundingClientRect().width
+    const barWidth = barElement?.getBoundingClientRect()?.width
     const xStart = e.clientX - barContainer.left - cursorOffsetX
     const xEnd = xStart + barWidth
     if (isOutOfRange(xStart, xEnd)) {
